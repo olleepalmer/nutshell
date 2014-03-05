@@ -1,0 +1,7 @@
+<% if signed_in? %>
+  $("#sign_in_modal").modal('hide');
+  $("#main_navigation").html("<%= j render('layouts/navigation') %>");
+<% else %>
+  // should not get here, the failure action should kick in
+  alert("Failed to log in. Please try again!");
+<% end %>

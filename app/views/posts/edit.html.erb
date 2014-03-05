@@ -1,0 +1,44 @@
+<h4>
+  <%= best_in_place @post, :category_id, type: :select, collection: Category.all.map { |c| [c.id, c.title]}, display_as: :category_title %> / <%= best_in_place @post, :title, type: :input %>
+  <small>Click to edit category or title</small>
+</h4>
+<hr class="dotted">
+
+<div class="row">
+  <div class="col-sm-6">
+    <p>Remember, the name of the game is make each entry as short, succinct and concise as possible.</p>
+    <p>You need to use your superior understanding of the topic at hand to cut the heart of the matter. We reckon: You only truly understand something if you can explain clearly to a five year old.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+
+    <%= form_for(@post) do |f| %>
+
+      <div class="form-group">
+        <%= f.label :content %>
+        <div class="row large">
+          <div class="col-sm-12">
+            <%= f.text_area :content, class: "form-control", rows: 5 %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-sm-6">
+            <small>
+              Created by <%= @post.user.username %> on <%= @post.created_at.to_date.strftime("%d/%m/%y") %><br/>
+              Last edited by <%= @post.last_editor.username %> on <%= @post.updated_at.to_date.strftime("%d/%m/%y") %><br/>
+              <%= pluralize @post.versions.count, 'edit' %> in total.
+            </small>
+          </div>
+          <%= f.submit "Submit", class: "btn btn-lg btn-primary pull-right" %>
+        </div>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>

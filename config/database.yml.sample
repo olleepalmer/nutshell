@@ -1,0 +1,29 @@
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: wiki_development
+  pool:     5
+  username: wiki
+  password: 
+  template: template0
+
+test:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: wiki_test
+  pool:     5
+  username: wiki
+  password: 
+  template: template0
+
+production:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: wiki_production
+  pool:     5
+  username: wiki
+  password: 
+  template: template0
