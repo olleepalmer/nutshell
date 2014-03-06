@@ -21,7 +21,7 @@
 
 <div class="row">
   <div class="col-sm-6">
-    <span class="pull-right">This entry is <%= pluralize @post.content_length, 'word' %>. Think you can make it more concise? <%= link_to "Edit it", edit_post_path(@post) %>.</span>
+    <span class="pull-right">This entry is <%= pluralize @post.content_length, 'word' %>. Think you can make it more concise? <%= link_to "Edit it", edit_post_path(@post), class: 'authenticatable' %>.</span>
   </div>
 </div>
 

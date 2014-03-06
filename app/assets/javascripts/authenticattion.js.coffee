@@ -6,3 +6,11 @@ jQuery ->
 
     $('meta[name="csrf-param"]').attr('content', csrf_param) if csrf_param?
     $('meta[name="csrf-token"]').attr('content', csrf_token) if csrf_token?
+
+  $(".authenticatable").on 'click', ->
+    # cancel previous redirect, if any
+    $(".redirect-to").removeClass 'redirect-to'
+    $(@).addClass('redirect-to')
+    $("#sign_in_modal").modal('show')
+    false
+

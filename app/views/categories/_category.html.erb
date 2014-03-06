@@ -1,6 +1,6 @@
 <h3><%= category.title %> -
   <small><%= link_to 'See all', posts_path(category_id: category.id) %></small>
-  <span class="pull-right"><small><%= link_to 'Add a new entry', new_post_path(category_id: category.id) %></small></span>
+  <span class="pull-right"><small><%= link_to 'Add a new entry', new_post_path(category_id: category.id), class: 'authenticatable' %></small></span>
 </h3>
 
 <hr class="dotted">
