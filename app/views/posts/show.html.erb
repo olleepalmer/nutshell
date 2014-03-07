@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @post.full_title %><span class="pull-right"><small><%= link_to 'Edit this entry', edit_post_path(@post), class: 'authenticatable' %></small></span></h3>
+<h3><%= @post.full_title %><span class="pull-right"><small><%= link_to 'Edit this entry', edit_post_path(@post), class: ("authenticatable" unless signed_in?) %></small></span></h3>
 <hr class="dotted">
 
 <p class="lead"><%= simple_format @post.content %></p>
@@ -21,7 +21,7 @@
 
 <div class="row">
   <div class="col-sm-6">
-    <span class="pull-right">This entry is <%= pluralize @post.content_length, 'word' %>. Think you can make it more concise? <%= link_to "Edit it", edit_post_path(@post), class: 'authenticatable' %>.</span>
+    <span class="pull-right">This entry is <%= pluralize @post.content_length, 'word' %>. Think you can make it more concise? <%= link_to "Edit it", edit_post_path(@post), class: ("authenticatable" unless signed_in?) %>.</span>
   </div>
 </div>
 

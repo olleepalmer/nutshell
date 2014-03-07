@@ -15,6 +15,7 @@ class SessionsController < Devise::SessionsController
 
     respond_to do |format|
       format.js
+      format.html { super }
     end
 
   end
