@@ -23,6 +23,7 @@ class SessionsController < Devise::SessionsController
   def failure
     respond_to do |format|
       format.js
+      format.html { redirect_to :back, alert: 'Unknown username or password' }
     end
   end
 
