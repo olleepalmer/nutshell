@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def title(value)
     unless value.nil?
-      @title = "#{value} | Wiki"
+      @title = "#{value}"
     end
   end
 
