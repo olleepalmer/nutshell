@@ -21,7 +21,7 @@ requires email sending is *Forgot password*.
 After that, run `heroku config:add DOMAIN=ntshll.com SMTP_SERVER=smtp.sendgrid.net SMTP_PORT=25 MAILER_DOMAIN=ntshll.com`
 
 In order to add a new category, run something like
-`heroku run rake "categories:add[Science & Nature]"`
+`heroku run rake "categories:add['Science & Nature']"`
 
 In order to remove a category, run something like
-`heroku rake "categories:remove[Science & Nature]"`. Please be careful with this last command, it will also remove all the posts in that category.
+`heroku run rake "categories:remove['Science & Nature']"`. Please be careful with this last command, it will also remove all the posts in that category.
