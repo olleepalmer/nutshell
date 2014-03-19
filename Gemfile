@@ -50,4 +50,7 @@ gem 'paper_trail'
 # in place editor
 gem 'best_in_place', git: 'https://github.com/aaronchi/best_in_place.git'
 
+# markdown support
+gem 'redcarpet'
+
 gem 'rails_12factor', group: :production

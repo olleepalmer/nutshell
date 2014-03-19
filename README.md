@@ -1,5 +1,5 @@
-tldrer
-======
+Nutshell
+========
 
 A simple wiki application.
 
@@ -17,11 +17,10 @@ How to run on Heroku
 In order for email to work on Heroku, go to https://addons.heroku.com/sendgrid
 and choose the starter package for your application - it allows up to 200 emails/day,
 which should be enough for testing purposes, since the only feature that
-requires email sending is 'Forgot password'.
+requires email sending is *Forgot password*.
 
 In order to add a new category, run something like
 `heroku run rake "categories:add[Science & Nature]"`
 
 In order to remove a category, run something like
-`heroku rake "categories:remove[Science & Nature]"`
-Please be careful with the last command, it will also remove all the posts in that category.
+`heroku rake "categories:remove[Science & Nature]"`. Please be careful with this last command, it will also remove all the posts in that category.
