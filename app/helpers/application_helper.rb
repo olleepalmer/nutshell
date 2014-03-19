@@ -26,4 +26,14 @@ module ApplicationHelper
     markdown.render(text).html_safe
   end
 
+  def version_editor(version)
+
+    user = User.find(version.whodunnit) rescue nil
+
+    if user
+      link_to user.username, profile_path(user.id)
+    end
+
+  end
+
 end

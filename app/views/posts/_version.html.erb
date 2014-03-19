@@ -1,0 +1,7 @@
+<tr>
+  <td>
+    <%= link_to version.created_at.strftime("%H:%M #{version.created_at.day.ordinalize} %B %Y"), (version.event == "create" ? post_path(version.item) : version_path(version)) %>
+  </td>
+  <td><%= version.summary %></td>
+  <td><%= version_editor(version) %></td>
+</tr>

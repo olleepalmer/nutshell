@@ -1,0 +1,8 @@
+<% title "Nutshell - #{@post.title} revision history" %>
+
+<h3><%= @post.full_title %> - Revision History</h3>
+<hr class="dotted">
+
+<table class="table table-striped">
+  <%= render partial: 'version', collection: @post.versions.order(created_at: :desc), as: :version %>
+</table>

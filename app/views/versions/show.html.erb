@@ -1,0 +1,22 @@
+<% title "Nutshell - #{@post.title}" %>
+
+<h3><%= @post.full_title %></h3>
+<hr class="dotted">
+
+<p class="lead"><%= markdown @post.content.to_s %></p>
+
+<br/>
+
+<div class="row">
+  <div class="col-sm-4">
+    <small>
+      Created by <%= @post.user.username %> on <%= @post.created_at.to_date.strftime("%d/%m/%y") %><br/>
+      Last edited by <%= @post.last_editor.username %> on <%= @post.updated_at.to_date.strftime("%d/%m/%y") %><br/>
+      <%= link_to pluralize(@post.versions.count, 'edit'), history_post_path(@post) %> in total.
+    </small>
+  </div>
+</div>
+
+<br/><br/>
+<h4>Other entries in <%= @post.category.title %>:</h4>
+<hr/>

@@ -1,0 +1,32 @@
+<% title "Nutshell - #{@user.username} profile" %>
+
+<h3><%= @user.username %></h3>
+<hr class="dotted">
+
+<p>Joined on <%= @user.created_at.strftime("%m/%d/%Y") %></p>
+<p>Edits: <%= @user.edit_count %></p>
+<p>Entries created: <%= @user.posts.count %>.</p>
+
+<br/>
+<% if @user.edit_count > 0 %>
+<h4>Most recent edits</h4>
+<ul>
+  <% @user.recent_edits.each do |version| %>
+    <li><%= link_to version.item.title, version_path(version) %></li>
+  <% end %>
+</ul>
+<% else %>
+<p><%= @user.username%> hasn't made any edits yet!</p>
+<% end %>
+
+<br/>
+<% if @user.posts.count > 0 %>
+<h4>Most recent entries created</h4>
+<ul>
+  <% @user.recent_posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %></li>
+  <% end %>
+</ul>
+<% else %>
+<p><%= @user.username%> hasn't created any yet!</p>
+<% end %>

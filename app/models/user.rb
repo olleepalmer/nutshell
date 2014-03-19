@@ -58,4 +58,16 @@ class User < ActiveRecord::Base
     where("admin = ? AND locked = ?",false,false).count
   end
 
+  def edit_count
+    PaperTrail::Version.where(whodunnit: self.id.to_s).count
+  end
+
+  def recent_edits
+    PaperTrail::Version.where(whodunnit: self.id.to_s).order(created_at: :desc).limit(10)
+  end
+
+  def recent_posts
+    posts.order(created_at: :desc).limit(10)
+  end
+
 end

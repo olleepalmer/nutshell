@@ -392,6 +392,11 @@ img{
 .field_with_errors{
   .form-control{
     border: 1px solid $brand-danger;
+    &:-moz-placeholder            { color: #f00 !important; } // Firefox 4-18
+    &::-moz-placeholder           { color: #f00  !important;   // Firefox 19+
+                                    opacity: 1; } // See https://github.com/twbs/bootstrap/pull/11526
+    &:-ms-input-placeholder       { color: #f00  !important; } // Internet Explorer 10+
+    &::-webkit-input-placeholder  { color: #f00  !important; } // Safari and Chrome
   }
   label{
     color: $brand-danger;

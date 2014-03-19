@@ -1,6 +1,12 @@
 Wiki::Application.routes.draw do
 
-  resources :posts
+  resources :posts do
+    get 'history', on: :member
+  end
+
+  resources :versions, only: :show
+
+  resources :profiles, only: :show
 
   root "pages#home"
   get "home", to: "pages#home", as: "home"

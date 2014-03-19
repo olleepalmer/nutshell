@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140305172727) do
+ActiveRecord::Schema.define(version: 20140319190618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140305172727) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "summary"
   end
 
   add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
@@ -83,6 +84,7 @@ ActiveRecord::Schema.define(version: 20140305172727) do
     t.string   "whodunnit"
     t.text     "object"
     t.datetime "created_at"
+    t.string   "summary"
   end
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
