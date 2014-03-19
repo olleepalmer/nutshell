@@ -18,6 +18,7 @@ In order for email to work on Heroku, go to https://addons.heroku.com/sendgrid
 and choose the starter package for your application - it allows up to 200 emails/day,
 which should be enough for testing purposes, since the only feature that
 requires email sending is *Forgot password*.
+After that, run `heroku config:add DOMAIN=ntshll.com SMTP_SERVER=smtp.sendgrid.net SMTP_PORT=25 MAILER_DOMAIN=ntshll.com`
 
 In order to add a new category, run something like
 `heroku run rake "categories:add[Science & Nature]"`

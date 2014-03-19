@@ -77,7 +77,7 @@ Wiki::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  
+
   # Mailer
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { :host => ENV["DOMAIN"] }
@@ -89,7 +89,7 @@ Wiki::Application.configure do
     domain: ENV["MAILER_DOMAIN"],
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["SMTP_USER"],
-    password: ENV["SMTP_PWD"]
+    user_name: ENV["SENDGRID_USERNAME"],
+    password: ENV["SENDGRID_PASSWORD"]
   }
 end
