@@ -14,3 +14,11 @@ How to run on Heroku
 6. Run `heroku run rake db:seed`
 7. Open the heroku application with `heroku apps:open`
 
+Other configuration
+===================
+
+In order for email to work on Heroku, go to https://addons.heroku.com/sendgrid
+and choose the starter package for your application - it allows up to 200 emails/day,
+which should be enough for testing purposes, since the only feature that
+requires email sending is 'Forgot password'.
+
