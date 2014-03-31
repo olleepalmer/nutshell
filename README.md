@@ -9,7 +9,7 @@ How to run on Heroku
 1. Create a heroku app with `heroku apps:create`
 2. Do a `git push heroku master`
 3. Get a public and private Recaptcha key at https://www.google.com/recaptcha
-4. Run `heroku config:add RECAPTCHA_PUBLIC_KEY="MY_PUBLIC_RECAPTCHA_KEY" RECAPTCHA_PRIVATE_KEY="MY_PRIVATE_RECAPTCHA_KEY"`
+4. Run `heroku config:add RECAPTCHA_PUBLIC_KEY="6Ld4__ASAAAAAOJ7Dzt2MR_fbsEMD8-h-XfkH2g3" RECAPTCHA_PRIVATE_KEY="6Ld4__ASAAAAAI4fuhVEoA2gYkDzt8Vf6-BKmHUp"`
 5. Run `heroku run rake db:migrate`
 6. Run `heroku run rake db:seed`
 7. Open the heroku application with `heroku apps:open`
@@ -25,3 +25,6 @@ In order to add a new category, run something like
 
 In order to remove a category, run something like
 `heroku run rake "categories:remove['Science & Nature']"`. Please be careful with this last command, it will also remove all the posts in that category.
+
+
+heroku run rake "categories:remove['Books, Movies & TV']"
